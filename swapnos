@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+void temp(int a, int b);
+void swapadd(int, int);
+void swaplog(int, int);
+
+void temp(int a, int b) {
+	int tempvar;
+	tempvar = a;
+	a = b;
+	b = tempvar;
+	cout << "a=" << a << endl << "b=" << b << endl;
+}
+
+void swapadd(int a, int b) {
+	a = a - b ;
+	b = b + a;
+	a = b - a;
+	cout << "a=" << a << endl << "b=" << b << endl;
+}
+
+void swaplog(int a, int b) {
+	a = a^b;
+	b = b^a;
+	a = a^b;
+	cout << "a=" << a << endl << "b=" << b << endl;
+}
+
+int main() {
+
+	int a, b, choice;
+	cout << "enter the two number to Swap inbetween\n";
+	cin >> a >> b;
+	cout << "1. Swap by temp variable\n 2.Swap without temp variable\n 3. swap using logical operator\n";
+	cout << "enter the choice from 1. 2. 3.\n";
+	cin >> choice;
+	switch(choice) {
+	case 1:
+		temp(a, b);
+		break;
+	case 2:
+		swapadd(a, b);
+		break;
+	case 3:
+		 swaplog(a, b);
+		break;
+	default:
+			break;
+	}
+
+	getchar();
+	getchar();
+	return 0;
+}
